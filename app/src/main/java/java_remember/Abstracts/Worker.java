@@ -57,7 +57,7 @@ public abstract class Worker implements IAgent  {
         return this;
     };
     @Override
-    public long getID() throws Exception{ // Fazer o Throws abaixo
+    public long getID() throws Exception{
         if(this.ID.equals(0l)){
             throw new Exception("Nao tem ID");
         }
@@ -72,7 +72,7 @@ public abstract class Worker implements IAgent  {
     }
     @Override
     public IAgent setHome(IBuilding home) throws Exception{
-        if(Objects.equals(this.Home, null)){
+        if(!Objects.equals(this.Home, null)){
             throw new Exception("Ja foi especificado um Home");
         }
         this.Home = home;
@@ -86,5 +86,19 @@ public abstract class Worker implements IAgent  {
         }
         return this.Home;
     }
+    public IAgent setLocation(IBuilding home) throws Exception{
+        if(!Objects.equals(this.Location, null)){
+            throw new Exception("Ja foi especificado um Location");
+        }
+        this.Home = home;
+        return this;
+        
+    }
     
+    public IBuilding getLocation() throws Exception {
+        if(Objects.equals(this.Location, null)){
+            throw new Exception("Nao foi especificado um Location");
+        }
+        return this.Home;
+    }
 }
