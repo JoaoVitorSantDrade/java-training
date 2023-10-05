@@ -4,9 +4,11 @@ import java.util.List;
 
 public interface IBuilding {
     
-    public IBuilding setOccupants();
+    public IBuilding addOccupant(IAgent args);
     public List<IAgent> getOccupants();
-    public IBuilding setSite();
-    public String getSite() throws Exception;
+    public IBuilding setSite(String site);
+    public String getSite();
+    public IBuilding setName(String name);
+    public String getName();
 
 }

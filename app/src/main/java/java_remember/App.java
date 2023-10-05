@@ -3,12 +3,19 @@
  */
 package java_remember;
 
+import java.util.Scanner;
+
+import java_remember.Abstracts.Worker;
+import java_remember.Interfaces.IAgent;
+import java_remember.Interfaces.IBuilding;
+import java_remember.Model.Lab;
+import java_remember.Model.WorkerBuilder;
+
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
+    public static void main(String[] args) {
+        
+        
     }
 
-    public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
-    }
+    
 }

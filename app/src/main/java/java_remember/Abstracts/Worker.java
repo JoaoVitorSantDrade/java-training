@@ -101,4 +101,8 @@ public abstract class Worker implements IAgent  {
         }
         return this.Home;
     }
+
+    public String getHelp() throws Exception {
+        return "Peca ajuda a quem lhe contratou";
+    };
 }
