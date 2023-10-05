@@ -9,12 +9,13 @@ import java_remember.Interfaces.IBuilding;
 
 public abstract class Worker implements IAgent  {
 
-    private Double Salary = null;
+    private Double Salary = 0d;
     private Date StartDate = null;
     private Date TerminationDate = null;
-    private Long ID = null;
+    private Long ID = 0l;
     private String Name = null;
-    private IBuilding Home= null;
+    private IBuilding Home = null;
+    private IBuilding Location = null;
 
     public double getHourly() throws Exception {
         if (this.Salary.equals(0d)) {
@@ -56,23 +57,34 @@ public abstract class Worker implements IAgent  {
         return this;
     };
     @Override
-    public long getID() { // Fazer o Throws abaixo
+    public long getID() throws Exception{ // Fazer o Throws abaixo
+        if(this.ID.equals(0l)){
+            throw new Exception("Nao tem ID");
+        }
         return this.ID;
     }
     @Override
-    public String getName() {
+    public String getName() throws Exception {
+        if(Objects.equals(this.Name, null)){
+            throw new Exception("Nao tem Nome");
+        }
         return this.Name;
     }
     @Override
-    public IAgent setHome(IBuilding home) {
+    public IAgent setHome(IBuilding home) throws Exception{
+        if(Objects.equals(this.Home, null)){
+            throw new Exception("Ja foi especificado um Home");
+        }
         this.Home = home;
         return this;
         
     }
     @Override
     public IBuilding getHome() throws Exception {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getHome'");
+        if(Objects.equals(this.Home, null)){
+            throw new Exception("Nao foi especificado um Home");
+        }
+        return this.Home;
     }
     
 }

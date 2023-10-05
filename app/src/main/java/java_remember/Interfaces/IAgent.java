@@ -2,8 +2,8 @@ package java_remember.Interfaces;
 
 public interface IAgent {
     
-    public long getID();
-    public String getName();
-    public IAgent setHome(IBuilding home);
+    public long getID() throws Exception;
+    public String getName() throws Exception;
+    public IAgent setHome(IBuilding home) throws Exception;
     public IBuilding getHome() throws Exception;   
 }
